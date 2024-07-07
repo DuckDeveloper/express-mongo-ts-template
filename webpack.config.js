@@ -1,5 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path')
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const nodeExternals = require('webpack-node-externals')
 
@@ -20,6 +21,18 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['.ts', '.js'],
+		alias: {
+			'~db': path.resolve(__dirname, './src/db'),
+			'~controllers': path.resolve(__dirname, './src/controllers'),
+			'~routes': path.resolve(__dirname, './src/routes'),
+			'~helpers': path.resolve(__dirname, './src/helpers'),
+			'~utils': path.resolve(__dirname, './src/utils'),
+			'~middlewares': path.resolve(__dirname, './src/middlewares'),
+			'~packages': path.resolve(__dirname, './src/packages'),
+			'~models': path.resolve(__dirname, './src/models'),
+			['~env-constants']: path.resolve(__dirname, './src/env-constants'),
+			['~types']: path.resolve(__dirname, './src/types'),
+		},
 	},
 	module: {
 		rules: [
